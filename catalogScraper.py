@@ -42,14 +42,12 @@ def main():
 
     for i in numCat[2:]:
         count = 0
-        found = False
         for c in allClasses[beg:end]:
             if c in classesTaken:
                 classesTaken.remove(c)
-                found = True
                 count = count + 1
-        if not found or count < numEach[index]:
-            print("You have "+ str(numEach[index]-count)+ " class(es) left from this list:")
+        if count < numEach[index]:
+            print("You have " + str(numEach[index] - count) + " class(es) left from this list:")
             print(allClasses[beg:end])
         beg = end
         end = end + i
